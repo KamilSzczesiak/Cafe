@@ -27,12 +27,12 @@ const Hero = () => {
               <div data-aos="fade-up" data-aos-delay="400">
               <button
                 onClick={() => {
-                  const section = document.querySelector("#coffee");
+                  const section = document.querySelector("#drinks");
                   section?.scrollIntoView({ behavior: "smooth" });
                 }}
                   className="bg-gradient-to-r from-primary to-secondary border-2 border-primary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full"
               >
-                I'm Hungry!
+                Explore The Menu!
               </button>
               </div>
             </div>

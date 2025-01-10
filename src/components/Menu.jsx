@@ -1,11 +1,26 @@
 import React from "react";
-import Img2 from "../assets/coffee2.png";
+
+import Espresso from "../assets/espresso.png"
+import Americano from "../assets/americano.png"
+import Cappuccino from "../assets/cappuccino.png"
+import Latte from "../assets/latte.png"
+
+import Tea from "../assets/tea.png"
+import GreenTea from "../assets/green_tea.png"
+import PeppermintTea from "../assets/peppermint_tea.png"
+
 import Croissant from "../assets/croissant.png"
 import CinnamonRoll from "../assets/cinnamon_roll.png"
+import Donut from "../assets/donut.png"
+import LemonSlice from "../assets/lemon_slice.png"
+import PainAuChocolat from "../assets/pain_au_chocolat.png"
+
+import Cheesecake from "../assets/cheesecake.png"
+import Brownies from "../assets/brownies.png"
 const DrinksData = [
   {
     id: 1,
-    img: Img2,
+    img: Espresso,
     name: "Espresso",
     description:
       "£4.99 - That's that me Espresso",
@@ -13,7 +28,7 @@ const DrinksData = [
   },
   {
     id: 2,
-    img: Img2,
+    img: Americano,
     name: "Americano",
     description:
       "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
@@ -21,7 +36,7 @@ const DrinksData = [
   },
   {
     id: 3,
-    img: Img2,
+    img: Cappuccino,
     name: "Cappuccino",
     description:
       "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
@@ -29,24 +44,46 @@ const DrinksData = [
   },
   {
     id: 4,
-    img: Img2,
+    img: Latte,
     name: "Latte",
     description:
       "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
     aosDelay: "500",
   },
   {
+    id: "gap-1", // Placeholder ID
+    img: null, // No image for gap
+    name: "", // Empty name
+    description: "", // Empty description
+    aosDelay: "0", // No animation
+  },
+  {
+    id: "gap-2", // Placeholder ID
+    img: null, // No image for gap
+    name: "", // Empty name
+    description: "", // Empty description
+    aosDelay: "0", // No animation
+  },
+  {
     id: 5,
-    img: Img2,
-    name: "Mocha",
+    img: Tea,
+    name: "Tea",
     description:
       "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
     aosDelay: "500",
   },
   {
     id: 6,
-    img: Img2,
-    name: "Macchiato",
+    img: GreenTea,
+    name: "Green Tea",
+    description:
+      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+    aosDelay: "500",
+  },
+  {
+    id: 7,
+    img: PeppermintTea,
+    name: "Peppermint Tea",
     description:
       "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
     aosDelay: "500",
@@ -71,35 +108,46 @@ const PastriesData = [
   },
   {
     id: 3,
-    img: Img2,
-    name: "Cheese Twist",
+    img: Donut,
+    name: "Donut",
     description:
       "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
     aosDelay: "500",
   },
   {
     id: 4,
-    img: Img2,
-    name: "Latte",
+    img: LemonSlice,
+    name: "Lemon Slice",
     description:
       "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
     aosDelay: "500",
   },
   {
     id: 5,
-    img: Img2,
-    name: "Mocha",
+    img: PainAuChocolat,
+    name: "Pain Au Chocolat",
     description:
       "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
     aosDelay: "500",
   },
+];
+
+const DessertData = [
   {
-    id: 6,
-    img: Img2,
-    name: "Macchiato",
+    id: 1,
+    img: Cheesecake,
+    name: "Cheesecake",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
-    aosDelay: "500",
+      "£2.50 Fresh and Crispy",
+    aosDelay: "100",
+  },
+  {
+    id: 2,
+    img: Brownies,
+    name: "Brownies",
+    description:
+      "£2.50 Fresh and Crispy",
+    aosDelay: "100",
   },
 ];
 const Services = () => {
@@ -119,10 +167,57 @@ const Services = () => {
               Drinks
             </h1>
           </div>
-
           {/* Services Card section  */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
-            {DrinksData.map((service) => (
+  {/* Coffee Title */}
+  <div className="w-full text-center my-5 md:col-span-3">
+    <h2 className="text-3xl font-bold text-primary">Coffee</h2>
+  </div>
+
+  {/* Drinks Cards */}
+  {DrinksData.map((service) => (
+    <>
+      {service.id === 5 && (
+        // Add the "Tea" title before rendering the Green Tea item
+        <div key="tea-title" className="w-full text-center my-5 md:col-span-3">
+          <h2 className="text-3xl font-bold text-primary">Tea</h2>
+        </div>
+      )}
+      {service.img ? (
+        <div
+          key={service.id}
+          data-aos="fade-up"
+          data-aos-delay={service.aosDelay}
+          className="rounded-2xl bg-white hover:bg-primary hover:text-white relative shadow-xl duration-high group max-w-[300px]"
+        >
+          <div className="h-[122px]">
+            <img
+              src={service.img}
+              alt={service.name}
+              className="max-w-[200px] block mx-auto transform -translate-y-14
+                  group-hover:scale-105 group-hover:rotate-6 duration-300 mt-11"
+            />
+          </div>
+          <div className="p-4 text-center">
+            <h1 className="text-xl font-bold">{service.name}</h1>
+            <p className="text-gray-500 group-hover:text-white duration-high text-sm line-clamp-2">
+              {service.description}
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div key={service.id} className="invisible"></div>
+      )}
+    </>
+  ))}
+</div>
+          <div id="pastries" className="text-center mb-20">
+            <h1 className="text-5xl font-bold font-cursive2 text-primary">
+              Pastries
+            </h1>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
+            {PastriesData.map((service) => (
               <div
                 data-aos="fade-up"
                 data-aos-delay={service.aosDelay}
@@ -146,13 +241,13 @@ const Services = () => {
               </div>
             ))}
           </div>
-          <div id="pastries" className="text-center mb-20">
+          <div id="dessert" className="text-center mb-20">
             <h1 className="text-5xl font-bold font-cursive2 text-primary">
-              Pastries
+              Dessert
             </h1>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
-            {PastriesData.map((service) => (
+            {DessertData.map((service) => (
               <div
                 data-aos="fade-up"
                 data-aos-delay={service.aosDelay}

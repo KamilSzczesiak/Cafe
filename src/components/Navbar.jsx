@@ -24,7 +24,7 @@ const Menu = [
     dropdown: [
       { id: 1, name: "Drinks", link: "#drinks" },
       { id: 2, name: "Pastries", link: "#pastries" },
-      { id: 3, name: "Dessert", link: "#pastries" },
+      { id: 3, name: "Dessert", link: "#dessert" },
     ],
   },
 ];

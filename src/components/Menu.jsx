@@ -252,7 +252,7 @@ const Services = () => {
             ))}
           </div>
           {/* Dessert Section */}
-          <div id="desert" className="text-center mb-20">
+          <div id="dessert" className="text-center mb-20">
             <h1 className="text-5xl font-bold font-cursive2 text-primary">
               Dessert
             </h1>

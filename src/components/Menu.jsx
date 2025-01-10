@@ -23,7 +23,7 @@ const DrinksData = [
     img: Espresso,
     name: "Espresso",
     description:
-      "£4.99 - That's that me Espresso",
+      "£3.99 | Start your morning the right way, with our fresh and steamy hot shot of premium espresso.",
     aosDelay: "100",
   },
   {
@@ -31,7 +31,7 @@ const DrinksData = [
     img: Americano,
     name: "Americano",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£4.99 | A classic coffee experience with a robust flavor and rich aroma, made with the finest beans.",
     aosDelay: "300",
   },
   {
@@ -39,7 +39,7 @@ const DrinksData = [
     img: Cappuccino,
     name: "Cappuccino",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£4.99 | A delightful mix of espresso, steamed milk, and a frothy top sprinkled with cocoa.",
     aosDelay: "500",
   },
   {
@@ -47,29 +47,29 @@ const DrinksData = [
     img: Latte,
     name: "Latte",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£4.99 | Smooth, creamy, and perfectly balanced with a rich shot of espresso and velvety milk.",
     aosDelay: "500",
   },
   {
-    id: "gap-1", // Placeholder ID
-    img: null, // No image for gap
-    name: "", // Empty name
-    description: "", // Empty description
-    aosDelay: "0", // No animation
+    id: "gap-1",
+    img: null,
+    name: "",
+    description: "",
+    aosDelay: "0",
   },
   {
-    id: "gap-2", // Placeholder ID
-    img: null, // No image for gap
-    name: "", // Empty name
-    description: "", // Empty description
-    aosDelay: "0", // No animation
+    id: "gap-2",
+    img: null,
+    name: "",
+    description: "",
+    aosDelay: "0",
   },
   {
     id: 5,
     img: Tea,
     name: "Tea",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£3.99 | A comforting cup of classic tea, steeped to perfection for a soothing break.",
     aosDelay: "500",
   },
   {
@@ -77,7 +77,7 @@ const DrinksData = [
     img: GreenTea,
     name: "Green Tea",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£4.49 | Light, refreshing, and packed with antioxidants—enjoy the pure goodness of green tea.",
     aosDelay: "500",
   },
   {
@@ -85,17 +85,18 @@ const DrinksData = [
     img: PeppermintTea,
     name: "Peppermint Tea",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£4.49 | A fragrant and refreshing herbal tea with the cooling essence of peppermint.",
     aosDelay: "500",
   },
 ];
+
 const PastriesData = [
   {
     id: 1,
     img: Croissant,
     name: "Croissant",
     description:
-      "£2.50 Fresh and Crispy",
+      "£2.49 | Buttery, flaky, and freshly baked—a perfect start to your day.",
     aosDelay: "100",
   },
   {
@@ -103,7 +104,7 @@ const PastriesData = [
     img: CinnamonRoll,
     name: "Cinnamon Roll",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£2.99 | Swirls of cinnamon and a sweet glaze make this roll irresistible.",
     aosDelay: "300",
   },
   {
@@ -111,7 +112,7 @@ const PastriesData = [
     img: Donut,
     name: "Donut",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£2.99 | A soft, sweet treat with a golden glaze or a sprinkle of your choice.",
     aosDelay: "500",
   },
   {
@@ -119,7 +120,7 @@ const PastriesData = [
     img: LemonSlice,
     name: "Lemon Slice",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£3.49 | Tangy and sweet, with a zesty lemon flavor in every bite.",
     aosDelay: "500",
   },
   {
@@ -127,7 +128,7 @@ const PastriesData = [
     img: PainAuChocolat,
     name: "Pain Au Chocolat",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "£2.99 | A flaky pastry filled with rich, melted chocolate—pure indulgence.",
     aosDelay: "500",
   },
 ];
@@ -138,7 +139,7 @@ const DessertData = [
     img: Cheesecake,
     name: "Cheesecake",
     description:
-      "£2.50 Fresh and Crispy",
+      "£3.49 | Creamy, rich, and perfectly sweet with a buttery biscuit base.",
     aosDelay: "100",
   },
   {
@@ -146,71 +147,69 @@ const DessertData = [
     img: Brownies,
     name: "Brownies",
     description:
-      "£2.50 Fresh and Crispy",
+      "£2.99 | Fudgy and decadent with a deep chocolate flavor—an all-time favorite.",
     aosDelay: "100",
   },
 ];
+
+const formatDescription = (description) => {
+  const [price, ...rest] = description.split(" | ");
+  return { price, details: rest.join(" | ") };
+};
+
 const Services = () => {
   return (
     <>
       <span id="services"></span>
       <div className="py-10">
         <div className="container">
-          {/* Heading section  */}
+          {/* Drinks Section */}
           <div id="drinks" className="text-center mb-20">
-            <h1 className="text-4xl font-bold font-cursive text-gray-800">
-              Best Options For You
-            </h1>
-          </div>
-          <div className="text-center mb-20">
             <h1 className="text-5xl font-bold font-cursive2 text-primary">
               Drinks
             </h1>
           </div>
-          {/* Services Card section  */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
-  {/* Coffee Title */}
-  <div className="w-full text-center my-5 md:col-span-3">
-    <h2 className="text-3xl font-bold text-primary">Coffee</h2>
-  </div>
+            {DrinksData.map(
+              (service) =>
+                service.img && (
+                  <div
+                    key={service.id}
+                    data-aos="fade-up"
+                    data-aos-delay={service.aosDelay}
+                    className="rounded-2xl bg-white hover:bg-primary hover:text-white relative shadow-xl duration-high group max-w-[300px]"
+                  >
+                    <div className="h-[122px]">
+                      <img
+                        src={service.img}
+                        alt={service.name}
+                        className="max-w-[200px] block mx-auto transform -translate-y-14 group-hover:scale-105 group-hover:rotate-6 duration-300 mt-11"
+                      />
+                    </div>
+                    <div className="p-4 text-center">
+                      <h1 className="text-xl font-bold">{service.name}</h1>
+                      {(() => {
+                        const { price, details } = formatDescription(
+                          service.description
+                        );
+                        return (
+                          <>
+                            <p className="text-primary font-bold text-md">
+                              {price}
+                            </p>
+                            <p className="text-gray-500 group-hover:text-white duration-high text-sm">
+                              {details}
+                            </p>
+                          </>
+                        );
+                      })()}
+                    </div>
+                  </div>
+                )
+            )}
+          </div>
 
-  {/* Drinks Cards */}
-  {DrinksData.map((service) => (
-    <>
-      {service.id === 5 && (
-        // Add the "Tea" title before rendering the Green Tea item
-        <div key="tea-title" className="w-full text-center my-5 md:col-span-3">
-          <h2 className="text-3xl font-bold text-primary">Tea</h2>
-        </div>
-      )}
-      {service.img ? (
-        <div
-          key={service.id}
-          data-aos="fade-up"
-          data-aos-delay={service.aosDelay}
-          className="rounded-2xl bg-white hover:bg-primary hover:text-white relative shadow-xl duration-high group max-w-[300px]"
-        >
-          <div className="h-[122px]">
-            <img
-              src={service.img}
-              alt={service.name}
-              className="max-w-[200px] block mx-auto transform -translate-y-14
-                  group-hover:scale-105 group-hover:rotate-6 duration-300 mt-11"
-            />
-          </div>
-          <div className="p-4 text-center">
-            <h1 className="text-xl font-bold">{service.name}</h1>
-            <p className="text-gray-500 group-hover:text-white duration-high text-sm line-clamp-2">
-              {service.description}
-            </p>
-          </div>
-        </div>
-      ) : (
-        <div key={service.id} className="invisible"></div>
-      )}
-    </>
-  ))}
-</div>
+          {/* Pastries Section */}
           <div id="pastries" className="text-center mb-20">
             <h1 className="text-5xl font-bold font-cursive2 text-primary">
               Pastries
@@ -219,6 +218,7 @@ const Services = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
             {PastriesData.map((service) => (
               <div
+                key={service.id}
                 data-aos="fade-up"
                 data-aos-delay={service.aosDelay}
                 className="rounded-2xl bg-white hover:bg-primary hover:text-white relative shadow-xl duration-high group max-w-[300px]"
@@ -226,22 +226,33 @@ const Services = () => {
                 <div className="h-[122px]">
                   <img
                     src={service.img}
-                    alt=""
-                    className="max-w-[200px] block mx-auto transform -translate-y-14
-                  group-hover:scale-105 group-hover:rotate-6 duration-300 mt-11"
+                    alt={service.name}
+                    className="max-w-[200px] block mx-auto transform -translate-y-14 group-hover:scale-105 group-hover:rotate-6 duration-300 mt-11"
                   />
                 </div>
                 <div className="p-4 text-center">
-                  <div className="w-full "></div>
                   <h1 className="text-xl font-bold">{service.name}</h1>
-                  <p className="text-gray-500 group-hover:text-white duration-high text-sm line-clamp-2">
-                    {service.description}
-                  </p>
+                  {(() => {
+                    const { price, details } = formatDescription(
+                      service.description
+                    );
+                    return (
+                      <>
+                        <p className="text-primary font-bold text-md">
+                          {price}
+                        </p>
+                        <p className="text-gray-500 group-hover:text-white duration-high text-sm">
+                          {details}
+                        </p>
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             ))}
           </div>
-          <div id="dessert" className="text-center mb-20">
+          {/* Dessert Section */}
+          <div id="desert" className="text-center mb-20">
             <h1 className="text-5xl font-bold font-cursive2 text-primary">
               Dessert
             </h1>
@@ -249,6 +260,7 @@ const Services = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
             {DessertData.map((service) => (
               <div
+                key={service.id}
                 data-aos="fade-up"
                 data-aos-delay={service.aosDelay}
                 className="rounded-2xl bg-white hover:bg-primary hover:text-white relative shadow-xl duration-high group max-w-[300px]"
@@ -256,17 +268,27 @@ const Services = () => {
                 <div className="h-[122px]">
                   <img
                     src={service.img}
-                    alt=""
-                    className="max-w-[200px] block mx-auto transform -translate-y-14
-                  group-hover:scale-105 group-hover:rotate-6 duration-300 mt-11"
+                    alt={service.name}
+                    className="max-w-[200px] block mx-auto transform -translate-y-14 group-hover:scale-105 group-hover:rotate-6 duration-300 mt-11"
                   />
                 </div>
                 <div className="p-4 text-center">
-                  <div className="w-full "></div>
                   <h1 className="text-xl font-bold">{service.name}</h1>
-                  <p className="text-gray-500 group-hover:text-white duration-high text-sm line-clamp-2">
-                    {service.description}
-                  </p>
+                  {(() => {
+                    const { price, details } = formatDescription(
+                      service.description
+                    );
+                    return (
+                      <>
+                        <p className="text-primary font-bold text-md">
+                          {price}
+                        </p>
+                        <p className="text-gray-500 group-hover:text-white duration-high text-sm">
+                          {details}
+                        </p>
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
             ))}

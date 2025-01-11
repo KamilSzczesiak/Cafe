@@ -207,7 +207,7 @@ const Services = () => {
                         );
                         return (
                           <>
-                            <p className="text-primary font-bold text-md">
+                            <p className="text-primary font-bold text-md price">
                               {price}
                             </p>
                             <p className="text-gray-500 group-hover:text-white duration-high text-sm">
@@ -252,7 +252,7 @@ const Services = () => {
                         );
                         return (
                           <>
-                            <p className="text-primary font-bold text-md">
+                            <p className="text-primary font-bold text-md price">
                               {price}
                             </p>
                             <p className="text-gray-500 group-hover:text-white duration-high text-sm">
@@ -296,7 +296,7 @@ const Services = () => {
                     );
                     return (
                       <>
-                        <p className="text-primary font-bold text-md">
+                        <p className="text-primary font-bold text-md price">
                           {price}
                         </p>
                         <p className="text-gray-500 group-hover:text-white duration-high text-sm">
@@ -338,7 +338,7 @@ const Services = () => {
                     );
                     return (
                       <>
-                        <p className="text-primary font-bold text-md">
+                        <p className="text-primary font-bold text-md price">
                           {price}
                         </p>
                         <p className="text-gray-500 group-hover:text-white duration-high text-sm">

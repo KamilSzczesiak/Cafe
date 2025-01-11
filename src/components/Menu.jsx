@@ -25,6 +25,7 @@ const DrinksData = [
     description:
       "£3.99 | Start your morning the right way, with our fresh and steamy hot shot of premium espresso.",
     aosDelay: "100",
+    type: "coffee",
   },
   {
     id: 2,
@@ -33,6 +34,7 @@ const DrinksData = [
     description:
       "£4.99 | A classic coffee experience with a robust flavor and rich aroma, made with the finest beans.",
     aosDelay: "300",
+    type: "coffee",
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ const DrinksData = [
     description:
       "£4.99 | A delightful mix of espresso, steamed milk, and a frothy top sprinkled with cocoa.",
     aosDelay: "500",
+    type: "coffee",
   },
   {
     id: 4,
@@ -49,6 +52,7 @@ const DrinksData = [
     description:
       "£4.99 | Smooth, creamy, and perfectly balanced with a rich shot of espresso and velvety milk.",
     aosDelay: "500",
+    type: "coffee",
   },
   {
     id: "gap-1",
@@ -71,6 +75,7 @@ const DrinksData = [
     description:
       "£3.99 | A comforting cup of classic tea, steeped to perfection for a soothing break.",
     aosDelay: "500",
+    type: "tea",
   },
   {
     id: 6,
@@ -79,6 +84,7 @@ const DrinksData = [
     description:
       "£4.49 | Light, refreshing, and packed with antioxidants—enjoy the pure goodness of green tea.",
     aosDelay: "500",
+    type: "tea",
   },
   {
     id: 7,
@@ -87,6 +93,7 @@ const DrinksData = [
     description:
       "£4.49 | A fragrant and refreshing herbal tea with the cooling essence of peppermint.",
     aosDelay: "500",
+    type: "tea",
   },
 ];
 
@@ -169,8 +176,59 @@ const Services = () => {
               Drinks
             </h1>
           </div>
+          {/* Coffee Section */}
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-semibold font-cursive2 text-primary">
+              Coffee
+            </h2>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
-            {DrinksData.map(
+            {DrinksData.filter((service) => service.type === "coffee").map(
+              (service) =>
+                service.img && (
+                  <div
+                    key={service.id}
+                    data-aos="fade-up"
+                    data-aos-delay={service.aosDelay}
+                    className="rounded-2xl bg-white hover:bg-primary hover:text-white relative shadow-xl duration-high group max-w-[300px]"
+                  >
+                    <div className="h-[122px]">
+                      <img
+                        src={service.img}
+                        alt={service.name}
+                        className="max-w-[200px] block mx-auto transform -translate-y-14 group-hover:scale-105 group-hover:rotate-6 duration-300 mt-11"
+                      />
+                    </div>
+                    <div className="p-4 text-center">
+                      <h1 className="text-xl font-bold">{service.name}</h1>
+                      {(() => {
+                        const { price, details } = formatDescription(
+                          service.description
+                        );
+                        return (
+                          <>
+                            <p className="text-primary font-bold text-md">
+                              {price}
+                            </p>
+                            <p className="text-gray-500 group-hover:text-white duration-high text-sm">
+                              {details}
+                            </p>
+                          </>
+                        );
+                      })()}
+                    </div>
+                  </div>
+                )
+            )}
+          </div>
+          {/* Tea Section */}
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-semibold font-cursive2 text-primary">
+              Tea
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
+            {DrinksData.filter((service) => service.type === "tea").map(
               (service) =>
                 service.img && (
                   <div

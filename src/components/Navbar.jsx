@@ -6,17 +6,17 @@ const Menu = [
   {
     id: 1,
     name: "Home",
-    link: "/",
+    link: "/Cafe/",
   },
   {
     id: 2,
     name: "About",
-    link: "/#about",
+    link: "/Cafe/#about",
   },
   {
     id: 3,
     name: "Contact",
-    link: "/#contact",
+    link: "/Cafe/#contact",
   },
   {
     id: 4,

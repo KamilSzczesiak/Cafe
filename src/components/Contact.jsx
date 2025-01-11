@@ -38,15 +38,16 @@ const Contact = () => {
             >
               Kamil's Cafe
             </a>
-            <p className="pt-4">
-              Crafted Coffee, Cozy Vibes, Unforgettable Moments – Your Perfect
-              Espresso Escape
+            <p className="pt-4"><i>
+              "Brewing Community, Connection, and Comfort, One Perfectly Crafted
+              Cup at a Time, Where Every Sip Tells a Story and Every Visit Feels
+              Like Home."</i>
             </p>
           </div>
 
           {/* Footer links */}
           <div className="col-span-2 grid grid-cols-2 sm:grid-cols-3 md:pl-10">
-          <div className="py-8 px-4"></div>
+            <div className="py-8 px-4"></div>
             <div className="py-8 px-4">
               <h1 className="text-xl font-semibold sm:text-left mb-3">
                 Quick Links

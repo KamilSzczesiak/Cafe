@@ -42,9 +42,16 @@ const Banner = () => {
                   data-aos="fade-up"
                   className="text-sm text-gray-500 tracking-wide leading-5"
                 >
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Eaque reiciendis inventore iste ratione ex alias quis magni at
-                  optio
+                  Welcome to Kamil's Cafe, where every cup tells a story.
+                  Nestled in the heart of Doncaster, we are more than just a
+                  cafe; we are a community hub, a place where flavors come to
+                  life and conversations flow. At Kamil's Cafe, we believe in
+                  crafting exceptional coffee experiences. From our carefully
+                  sourced beans to our expertly brewed beverages, each cup is a
+                  testament to our passion for quality and taste. Whether you're
+                  seeking a quiet corner to unwind with a book or a vibrant
+                  space to catch up with friends, our cozy ambiance and friendly
+                  service ensure that every visit is memorable.
                 </p>
 
                 <div className="grid grid-cols-2 gap-6">
@@ -75,12 +82,12 @@ const Banner = () => {
                     className="border-l-4 border-primary/50 pl-6 space-y-2"
                   >
                     <h1 className="text-2xl font-semibold font-cursive ">
-                      Tea Lover
+                      Induldge in our experience
                     </h1>
                     <p className="text-sm text-gray-500">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Eaque reiciendis inventore iste ratione ex alias quis magni at
-                    optio
+                      Join us for a journey of flavors and connections. Discover
+                      why Kamil's Cafe is not just a destination, but a part of
+                      your daily ritual.
                     </p>
                   </div>
                 </div>
